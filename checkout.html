@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checkout — RWEMA AI BOT PRO</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+</head>
+<body>
+<div class="doc wrap" style="text-align:center;padding-top:80px">
+  <h1>RWEMA AI BOT PRO</h1>
+  <p id="msg">Opening secure checkout…</p>
+  <p class="note" id="sub"></p>
+  <p style="margin-top:24px"><a class="cta" id="retry" style="display:none" href="#">Open checkout</a></p>
+</div>
+<script>
+// The client-side token is publishable by design (like the Supabase anon key);
+// Row-level security on Paddle's side is not needed — it can only open checkouts,
+// never read account data. The real secret is the webhook secret (server-side).
+const PADDLE_CLIENT_TOKEN = "live_2dffa0dbd9831ddd117a0e839d3";
+
+const params = new URLSearchParams(location.search);
+const priceId = params.get("price");
+const uid = params.get("uid");
+const email = params.get("email");
+const msg = document.getElementById("msg");
+const sub = document.getElementById("sub");
+const retry = document.getElementById("retry");
+
+if (params.get("status") === "success") {
+  msg.textContent = "Payment complete ✓";
+  sub.textContent = "Your license is being activated. Return to the RWEMA app — it appears under Settings within a few seconds.";
+} else if (!priceId || !uid) {
+  msg.textContent = "This checkout link is incomplete.";
+  sub.textContent = "Please start your subscription from inside the RWEMA app.";
+} else {
+  function openCheckout() {
+    Paddle.Checkout.open({
+      items: [{ priceId: priceId, quantity: 1 }],
+      customData: { user_uid: uid },
+      customer: email ? { email: email } : undefined,
+      settings: {
+        displayMode: "overlay",
+        theme: "dark",
+        successUrl: location.origin + "/checkout.html?status=success"
+      }
+    });
+  }
+  try {
+    Paddle.Environment.set("production");
+    Paddle.Initialize({ token: PADDLE_CLIENT_TOKEN });
+    openCheckout();
+    msg.textContent = "Complete your purchase in the secure Paddle window.";
+    retry.style.display = "inline-block";
+    retry.onclick = function (e) { e.preventDefault(); openCheckout(); };
+  } catch (err) {
+    msg.textContent = "Could not open checkout.";
+    sub.textContent = String(err);
+  }
+}
+</script>
+</body>
+</html>
