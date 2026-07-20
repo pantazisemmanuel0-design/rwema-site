@@ -1,0 +1,10 @@
+{
+  "name": "RWEMA AI BOT PRO",
+  "short_name": "RWEMA",
+  "description": "Deterministic Smart Money trading for MetaTrader 5.",
+  "start_url": "/downloads",
+  "display": "standalone",
+  "background_color": "#0b0e14",
+  "theme_color": "#0b0e14",
+  "icons": []
+}
