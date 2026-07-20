@@ -189,3 +189,7 @@ footer a { color: var(--muted); }
 }
 .confirm-mark.bad { background: rgba(239,68,68,.14); color: var(--danger); }
 @keyframes pop { from { transform: scale(.7); opacity: 0 } to { transform: scale(1); opacity: 1 } }
+
+.logo-mark { width: 26px; height: 26px; vertical-align: -6px; margin-right: 9px; }
+.brand-mark { width: 56px; height: 56px; display: block; margin: 4px auto 18px; }
+@media (max-width: 640px) { .logo-mark { width: 22px; height: 22px; vertical-align: -5px; margin-right: 7px; } }
