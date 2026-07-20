@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0e14">
+<title>Email confirmed — RWEMA AI BOT PRO</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header><div class="wrap">
+  <a class="logo" href="index.html">RWEMA <span>AI BOT PRO</span></a>
+  <nav><a href="index.html#features">Features</a><a href="index.html#pricing">Pricing</a>
+  <a href="downloads.html">Get started</a><a href="support.html">Support</a></nav>
+</div></header>
+
+<div class="start wrap" style="text-align:center;max-width:560px">
+  <div class="confirm-mark" id="mark">✓</div>
+  <h1 id="title">Email confirmed</h1>
+  <p class="lede" id="msg">Your account is active. Head back to the RWEMA app and
+  sign in — you can subscribe from <em>Settings → Subscribe</em>.</p>
+
+  <a class="dl-btn" href="downloads.html" style="justify-content:center">
+    <span class="dl-text" style="text-align:center">
+      <strong>Open the RWEMA app</strong>
+      <small>Don't have it yet? Get the Android app here</small>
+    </span>
+  </a>
+
+  <p class="hint">Trouble signing in? <a href="support.html">Contact support</a>.</p>
+</div>
+
+<footer><div class="wrap">
+  <span>© 2026 RWEMA</span>
+  <a href="privacy.html">Privacy Policy</a>
+  <a href="terms.html">Terms of Service</a>
+  <a href="refunds.html">Refund Policy</a>
+  <a href="support.html">Support</a>
+</div></footer>
+
+<script>
+// Supabase appends #error=... when a link is expired or already used; show
+// that honestly instead of claiming success.
+var h = new URLSearchParams(location.hash.replace(/^#/, ""));
+if (h.get("error") || h.get("error_description")) {
+  document.getElementById("mark").textContent = "!";
+  document.getElementById("mark").classList.add("bad");
+  document.getElementById("title").textContent = "Link expired";
+  document.getElementById("msg").textContent =
+    (h.get("error_description") || "This confirmation link is no longer valid.")
+    .replace(/\+/g, " ") + " Request a new one from the app's sign-in screen.";
+}
+</script>
+</body>
+</html>
