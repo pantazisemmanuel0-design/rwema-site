@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Documentation — RWEMA AI BOT PRO</title>
+<meta name="description" content="How RWEMA AI BOT PRO works: account, subscription, VPS install, connecting MT5, day-to-day controls, updates.">
+<link rel="canonical" href="https://rwema.store/documentation">
+<meta name="theme-color" content="#0b0e14">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="favicon.svg">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header><div class="wrap">
+  <a class="logo" href="index.html"><img src="favicon.svg" alt="" class="logo-mark">RWEMA <span>AI BOT PRO</span></a>
+  <nav><a href="index.html#features">Features</a><a href="index.html#pricing">Pricing</a>
+  <a href="downloads.html">Get started</a><a href="support.html">Support</a></nav>
+</div></header>
+
+<div class="doc wrap">
+  <h1>Documentation</h1>
+  <p>Everything from account creation to autonomous trading. The whole journey
+  takes about 20 minutes and needs no technical knowledge.</p>
+
+  <h2>1. Create your account</h2>
+  <p>Install the RWEMA Android app, sign up with your email, and confirm the
+  verification message. The app is your control centre — status, trades, journal,
+  performance, alerts, devices and settings all live there.</p>
+
+  <h2>2. Subscribe</h2>
+  <p>In the app: <em>Settings → Subscribe</em>. Choose Monthly, Annual, or the
+  one-time Lifetime plan. Secure checkout is handled by Paddle, our merchant of
+  record; your licence activates automatically the moment payment clears. If a
+  renewal payment fails, the bot enters a 7-day grace period — it keeps managing
+  open positions safely but opens nothing new.</p>
+
+  <h2>3. Connect a VPS</h2>
+  <p>You rent a Windows VPS from any provider (Hetzner, Contabo and DigitalOcean
+  all work well). In the app, <em>Settings → VPS &amp; Devices</em> gives you the
+  installer download and a one-time connection token. Download
+  <strong>rwema-install.exe</strong> onto the VPS, run it, and paste the token
+  plus your MT5 server, login and password. The installer sets up MetaTrader 5,
+  the trading engine, the supervising agent, Windows services and a credential
+  vault — then verifies everything and starts in observe-only mode. No Python,
+  no config files, no command line.</p>
+
+  <h2>4. Connect MetaTrader 5</h2>
+  <p>Your MT5 credentials are entered once, into the installer, and are encrypted
+  on the VPS with Windows DPAPI — they are never transmitted to us. The bot
+  connects to your account and begins scanning.</p>
+
+  <h2>5. Start trading</h2>
+  <p>Installation always finishes in observe-only mode. From the app you can
+  start the bot and, when ready, enable live trading — which only activates for
+  validated symbol and setup-grade populations. Every trade is deterministic and
+  fully journaled with its reasoning.</p>
+
+  <h2>6. Day-to-day</h2>
+  <ul>
+    <li><strong>Dashboard</strong> — bot status, agent health, MT5 connection, equity.</li>
+    <li><strong>Emergency Stop</strong> — flattens all positions within about 15 seconds, from anywhere.</li>
+    <li><strong>Restart Agent</strong> — recycles the VPS supervisor without reinstalling.</li>
+    <li><strong>Updates</strong> — signed packages are verified and applied automatically, with rollback on failure.</li>
+    <li><strong>Recovery</strong> — VPS reboots, MT5 crashes and network loss all recover unattended.</li>
+  </ul>
+
+  <h2>Need help?</h2>
+  <p>See the <a href="faq.html">FAQ</a> or email
+  <a href="mailto:support@rwema.store">support@rwema.store</a>.</p>
+</div>
+
+<footer><div class="wrap">
+  <span>© 2026 RWEMA</span>
+  <a href="privacy.html">Privacy Policy</a>
+  <a href="terms.html">Terms of Service</a>
+  <a href="refunds.html">Refund Policy</a>
+  <a href="risk.html">Risk Disclosure</a>
+  <a href="support.html">Support</a>
+</div></footer>
+</body>
+</html>

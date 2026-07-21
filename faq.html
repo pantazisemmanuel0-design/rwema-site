@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>FAQ — RWEMA AI BOT PRO</title>
+<meta name="description" content="Frequently asked questions about RWEMA AI BOT PRO: how it trades, subscriptions, VPS setup, safety, and refunds.">
+<link rel="canonical" href="https://rwema.store/faq">
+<meta name="theme-color" content="#0b0e14">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="favicon.svg">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header><div class="wrap">
+  <a class="logo" href="index.html"><img src="favicon.svg" alt="" class="logo-mark">RWEMA <span>AI BOT PRO</span></a>
+  <nav><a href="index.html#features">Features</a><a href="index.html#pricing">Pricing</a>
+  <a href="downloads.html">Get started</a><a href="support.html">Support</a></nav>
+</div></header>
+
+<div class="doc wrap">
+  <h1>Frequently asked questions</h1>
+
+  <h2>Does AI decide my trades?</h2>
+  <p>No — never. Every BUY and SELL comes from deterministic Smart Money Concept
+  rules. The same market data always produces the same decision, and each trade
+  is journaled with its full reasoning. AI is used only for plain-language
+  summaries, never to open or close a position.</p>
+
+  <h2>Do you touch my money or my broker account?</h2>
+  <p>No. You run the software on your own Windows server, connected to your own
+  MetaTrader 5 account at your own broker, with your own credentials — which are
+  encrypted on your machine and never sent to us. We never take custody of funds.</p>
+
+  <h2>What do I actually need?</h2>
+  <p>A Windows VPS (Server 2019+ / Windows 10+, 2 GB RAM), an MT5 account with
+  your broker (demo or live), and an Android 8.0+ phone for the app.</p>
+
+  <h2>How do I install it?</h2>
+  <p>Install the Android app, subscribe, then open <em>Settings → VPS &amp;
+  Devices</em> to get the Windows installer and a one-time connection token. Run
+  the installer on your VPS, paste the token and your MT5 login — it sets up
+  everything and starts in observe-only mode. No config files, no command line.</p>
+
+  <h2>What happens if my subscription lapses?</h2>
+  <p>The bot stops opening new trades but keeps managing open positions to a safe
+  close — it never abandons a funded account. Renewing reactivates everything
+  automatically; your licence key never changes. There is a 7-day grace period so
+  a failed card retry never interrupts you.</p>
+
+  <h2>What if my VPS reboots or MT5 crashes?</h2>
+  <p>A watchdog service restarts everything automatically and reconciles open
+  positions from the journal, so management continues with no duplicates.</p>
+
+  <h2>Can I move to a new VPS?</h2>
+  <p>Yes — retire the old device in the app, then mint a token for the new one.</p>
+
+  <h2>Which brokers and symbols are supported?</h2>
+  <p>Any MetaTrader 5 broker. The software automatically resolves broker-specific
+  symbol names (for example XAUUSD, XAUUSD.ecn or XAUUSDm). Live trading is
+  enabled per validated symbol population; everything else runs in observe mode.</p>
+
+  <h2>Is there a refund policy?</h2>
+  <p>Yes — a 14-day full refund from first purchase. See our
+  <a href="refunds.html">Refund Policy</a>.</p>
+
+  <h2>Still stuck?</h2>
+  <p>Email <a href="mailto:support@rwema.store">support@rwema.store</a> — we reply
+  within one business day.</p>
+</div>
+
+<footer><div class="wrap">
+  <span>© 2026 RWEMA</span>
+  <a href="privacy.html">Privacy Policy</a>
+  <a href="terms.html">Terms of Service</a>
+  <a href="refunds.html">Refund Policy</a>
+  <a href="risk.html">Risk Disclosure</a>
+  <a href="support.html">Support</a>
+</div></footer>
+</body>
+</html>
